@@ -1,4 +1,11 @@
 Cuba.define do
+  on options do
+  res.headers['Access-Control-Allow-Origin'] = '*'
+  res.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+  res.headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
+  res.write ''
+end
+
   on get do
     on root do
       res.write '<p>Danos un código postal y te regresamos la colonia, municipio y estado.
